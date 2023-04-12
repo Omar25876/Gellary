@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:gellary/models/Image.dart';
+import 'package:image_picker/image_picker.dart';
 import '../../constants/constants.dart';
 import '../../services/get_user_images.dart';
 import '../../services/upload_user_image.dart';
@@ -191,7 +192,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     InkWell(
                       onTap: (){
                         Navigator.pop(context);
-                        UploadUserImage.uploadNewImage(ImageSource.gellary,MyToken);
+                        UploadUserImage.uploadNewImage(ImageSource.gallery,MyToken);
 
                       },
                       child: Container(
