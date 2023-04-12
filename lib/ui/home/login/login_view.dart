@@ -1,9 +1,5 @@
-import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:gellary/services/get_user_images.dart';
-import 'package:gellary/services/upload_user_image.dart';
 import '../../../base.dart';
 import '../../../models/User.dart';
 import '../../../services/login_user.dart';
@@ -165,8 +161,8 @@ class _LoginViewState extends BaseView<LoginView, LoginViewModel>
                       visualDensity: VisualDensity.comfortable,
                       padding: MaterialStatePropertyAll(
                           EdgeInsets.only(
-                              right: MediaQuery.of(context).size.width*0.24,
-                            left: MediaQuery.of(context).size.width*0.24,
+                              right: MediaQuery.of(context).size.width*0.20,
+                            left: MediaQuery.of(context).size.width*0.20,
                             top: 12,
                             bottom: 12
                           ),
