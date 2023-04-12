@@ -8,39 +8,6 @@ import '../models/Image.dart';
 
 class UploadUserImage {
 
-  // static uploadMyImage(String title, File file,String token) async{
-  //   var request = http.MultipartRequest("POST",Uri.parse("https://technichal.prominaagency.com/api/upload"));
-  //   request.headers['Authorization'] = 'Bearer $token';
-  //   request.fields['img'] = title;
-  //   var picture = http.MultipartFile.fromBytes('image', (await rootBundle.load(file.path)).buffer.asUint8List(),
-  //       filename: title);
-  //   request.files.add(picture);
-  //   var response = await request.send();
-  //   var responseData = await response.stream.toBytes();
-  //   var result = String.fromCharCodes(responseData);
-  //   print(result);
-  // }
-
-  static Future<void> uploadUserImageToAPI(XFile imageFile, String token) async {
-    final url = Uri.parse('https://technichal.prominaagency.com/api/upload');
-    final request = http.MultipartRequest('POST', url);
-    final fileStream = http.ByteStream(imageFile.openRead());
-    final fileLength = await imageFile.length();
-    final multipartFile = http.MultipartFile(
-      'image',
-      fileStream,
-      fileLength,
-      filename: imageFile.path.split('/').last,
-    );
-    request.headers['Authorization'] = 'Bearer $token';
-    request.files.add(multipartFile);
-    final response = await request.send();
-    if (response.statusCode == 200) {
-      print('lol Image uploaded successfully');
-    } else {
-      print('Error uploading image: ${response.reasonPhrase}');
-    }
-  }
 
   static Future<void> uploadNewImage(ImageSource goSource,String token) async {
     final imageFile = await ImagePicker().pickImage(source: goSource,);
