@@ -193,6 +193,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                       onTap: (){
                         Navigator.pop(context);
                         UploadUserImage.uploadNewImage(ImageSource.gallery,MyToken);
+                        setState(() {
+
+                        });
 
                       },
                       child: Container(
@@ -225,7 +228,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                     ),
                     InkWell(
                       onTap: (){
+                        Navigator.pop(context);
                         UploadUserImage.uploadNewImage(ImageSource.camera,MyToken);
+                        setState(() {
+
+                        });
                       },
                       child: Container(
                         margin: EdgeInsets.only(

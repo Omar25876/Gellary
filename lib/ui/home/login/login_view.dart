@@ -180,23 +180,18 @@ class _LoginViewState extends BaseView<LoginView, LoginViewModel>
   }
 
   void ValidateForm() async {
-     // if (formkey.currentState!.validate()) {
+      if (formkey.currentState!.validate()) {
        LoginUser.LoginMyUser(
          email: 'gzieme@example.net',
          password: 'password',
        );
        Navigator.pushReplacementNamed(context, HomeWidget.routeName);
-     //}
-
-    // File file = File('assets/login.png');
-    //   UploadUserImage.uploadImage('assets/login.png', file);
-
 
   }
+}
 
   @override
   void goToHome(User myUser) {
-     //var provider = Provider.of<MyProvider>(context,listen: false);
-    // Navigator.pushReplacementNamed(context, HomeWidget.routeName);
+    // TODO: implement goToHome
   }
 }
